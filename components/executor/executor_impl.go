@@ -199,7 +199,6 @@ func (e *executorImpl) startDispatcher(ctx context.Context) {
 // We know about the latest minute we have jobs for,
 // we are adding one more minute to it and returning the starting moment of that minute
 // We can now dispatch jobs until this time and gracefully quit as we need to execute all the jobs before quitting.
-
 func (e *executorImpl) getEndOfNextMinute() time.Time {
 	return time.UnixMilli(60000 * (e.nextMin + 1))
 }
